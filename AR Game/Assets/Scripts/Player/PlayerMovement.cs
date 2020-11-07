@@ -26,6 +26,13 @@ public class PlayerMovement : MonoBehaviour
         Vector3 movement = (move.y * transform.forward) + (move.x * transform.right);
 
         characterController.Move(movement * moveSpeed * Time.deltaTime);
+
+        controls.Gameplay.ResetPos.started += context => ResetPos();
+    }
+
+    private void ResetPos()
+    {
+        transform.position = Vector3.zero;
     }
 
     private void OnEnable()

@@ -12,6 +12,14 @@
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "ResetPos",
+                    "type": "Button",
+                    "id": "63b0ffbf-cfe2-4d1d-aa10-07c4cb2138d2",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -69,6 +77,17 @@
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "75807756-c126-466d-ad6b-9aa3e1823e75",
+                    "path": "<Keyboard>/r",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ResetPos",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }
