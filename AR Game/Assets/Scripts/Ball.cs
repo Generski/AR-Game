@@ -27,7 +27,7 @@ public class Ball : MonoBehaviour
     {
         if (collider.enabled == true)
         {
-            rb.velocity = -1f * Vector3.up;
+            rb.velocity = -50f * Vector3.up * Time.deltaTime;
         }
     }
 }
