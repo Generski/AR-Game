@@ -15,19 +15,20 @@ public class Ball : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
-    private void Update()
-    {
-        /*if(collider.enabled == true)
-        {
-            rb.useGravity = true;
-        }*/
-    }
-
     private void FixedUpdate()
     {
         if (collider.enabled == true)
         {
             rb.velocity = -50f * Vector3.up * Time.deltaTime;
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "Pickup")
+        {
+            transform.localScale += new Vector3(0.1f, 0.1f, 0.1f);
+            Destroy(other.gameObject);
         }
     }
 }
