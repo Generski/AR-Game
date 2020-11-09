@@ -17,9 +17,17 @@ public class Ball : MonoBehaviour
 
     private void Update()
     {
-        if(collider.enabled == true)
+        /*if(collider.enabled == true)
         {
             rb.useGravity = true;
+        }*/
+    }
+
+    private void FixedUpdate()
+    {
+        if (collider.enabled == true)
+        {
+            rb.velocity = -1f * Vector3.up;
         }
     }
 }
