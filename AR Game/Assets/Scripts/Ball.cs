@@ -27,7 +27,7 @@ public class Ball : MonoBehaviour
     {
         if(other.tag == "Pickup")
         {
-            transform.localScale += new Vector3(0.1f, 0.1f, 0.1f);
+            transform.localScale += new Vector3(0.03f, 0.03f, 0.03f);
             Destroy(other.gameObject);
         }
     }
