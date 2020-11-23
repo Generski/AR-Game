@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
 
     private Rigidbody rb;
 
-    [SerializeField] private float moveSpeed = 10f;
+    [SerializeField] private float moveSpeed;
     private Vector2 move;
 
     private void Awake()
@@ -25,9 +25,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Vector3 movement = (move.y * transform.forward) + (move.x * transform.right);
+        Vector3 movement = (move.y * transform.forward) /* + (move.x * transform.right)*/;
 
-        rb.velocity = transform.position + movement;
+        rb.velocity = movement * Time.deltaTime * moveSpeed;
+
+        transform.Rotate(0.0f, move.x * moveSpeed * Time.deltaTime, 0.0f);
     }
 
     private void OnEnable()
